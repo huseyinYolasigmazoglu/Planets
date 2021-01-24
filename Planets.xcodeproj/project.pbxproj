@@ -19,6 +19,8 @@
 		524A1C6E25BD502D00D3D7FA /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A1C6D25BD502D00D3D7FA /* Webservice.swift */; };
 		524A1C7625BD621A00D3D7FA /* PlanetWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A1C7525BD621A00D3D7FA /* PlanetWebService.swift */; };
 		524A1C8A25BD632000D3D7FA /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A1C8925BD632000D3D7FA /* Planets.swift */; };
+		524DA26F25BDB14400794ACF /* PlanetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DA26E25BDB14400794ACF /* PlanetListViewModel.swift */; };
+		524DA27725BDBDB200794ACF /* PlanetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DA27625BDBDB200794ACF /* PlanetCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		524A1C6D25BD502D00D3D7FA /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		524A1C7525BD621A00D3D7FA /* PlanetWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetWebService.swift; sourceTree = "<group>"; };
 		524A1C8925BD632000D3D7FA /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
+		524DA26E25BDB14400794ACF /* PlanetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewModel.swift; sourceTree = "<group>"; };
+		524DA27625BDBDB200794ACF /* PlanetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +111,13 @@
 		524A1C2F25BD4E4300D3D7FA /* Planets */ = {
 			isa = PBXGroup;
 			children = (
+				524A1C3025BD4E4300D3D7FA /* AppDelegate.swift */,
+				524A1C3225BD4E4300D3D7FA /* SceneDelegate.swift */,
+				524DA26D25BDB10100794ACF /* ViewModels */,
+				524DA26825BDA4F400794ACF /* View */,
 				524DA26125BD9EF300794ACF /* ViewController */,
 				524A1C7A25BD627200D3D7FA /* Models */,
 				524A1C6C25BD501000D3D7FA /* Networking */,
-				524A1C3025BD4E4300D3D7FA /* AppDelegate.swift */,
-				524A1C3225BD4E4300D3D7FA /* SceneDelegate.swift */,
-				524A1C3625BD4E4300D3D7FA /* Main.storyboard */,
 				524A1C3C25BD4E4500D3D7FA /* Assets.xcassets */,
 				524A1C3E25BD4E4500D3D7FA /* LaunchScreen.storyboard */,
 				524A1C4125BD4E4500D3D7FA /* Info.plist */,
@@ -160,8 +165,25 @@
 			isa = PBXGroup;
 			children = (
 				524A1C3425BD4E4300D3D7FA /* MainViewController.swift */,
+				524DA27625BDBDB200794ACF /* PlanetCollectionViewCell.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		524DA26825BDA4F400794ACF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				524A1C3625BD4E4300D3D7FA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		524DA26D25BDB10100794ACF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				524DA26E25BDB14400794ACF /* PlanetListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524DA26F25BDB14400794ACF /* PlanetListViewModel.swift in Sources */,
 				524A1C3525BD4E4300D3D7FA /* MainViewController.swift in Sources */,
 				524A1C8A25BD632000D3D7FA /* Planets.swift in Sources */,
 				524A1C3125BD4E4300D3D7FA /* AppDelegate.swift in Sources */,
@@ -301,6 +324,7 @@
 				524A1C6E25BD502D00D3D7FA /* Webservice.swift in Sources */,
 				524A1C7625BD621A00D3D7FA /* PlanetWebService.swift in Sources */,
 				524A1C3B25BD4E4300D3D7FA /* Planets.xcdatamodeld in Sources */,
+				524DA27725BDBDB200794ACF /* PlanetCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
