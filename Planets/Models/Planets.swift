@@ -10,7 +10,14 @@ import Foundation
 
 struct Planets: Codable {
     
-    let count:Int
-    let next:String
+    let count:Int?
+    let next:String?
+    let results : [Planet?]
+    let deneme : String?
+}
+
+struct Planet : Codable {
     
+    let name : String?
+    let population : String?
 }

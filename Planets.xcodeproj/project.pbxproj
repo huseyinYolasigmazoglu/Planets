@@ -107,11 +107,11 @@
 		524A1C2F25BD4E4300D3D7FA /* Planets */ = {
 			isa = PBXGroup;
 			children = (
+				524DA26125BD9EF300794ACF /* ViewController */,
 				524A1C7A25BD627200D3D7FA /* Models */,
 				524A1C6C25BD501000D3D7FA /* Networking */,
 				524A1C3025BD4E4300D3D7FA /* AppDelegate.swift */,
 				524A1C3225BD4E4300D3D7FA /* SceneDelegate.swift */,
-				524A1C3425BD4E4300D3D7FA /* MainViewController.swift */,
 				524A1C3625BD4E4300D3D7FA /* Main.storyboard */,
 				524A1C3C25BD4E4500D3D7FA /* Assets.xcassets */,
 				524A1C3E25BD4E4500D3D7FA /* LaunchScreen.storyboard */,
@@ -154,6 +154,14 @@
 				524A1C8925BD632000D3D7FA /* Planets.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		524DA26125BD9EF300794ACF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				524A1C3425BD4E4300D3D7FA /* MainViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

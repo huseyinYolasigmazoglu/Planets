@@ -13,11 +13,11 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        var p = PlanetWebService()
+        let p = PlanetWebService()
         p.getAllPlanets { (planets) in
             
-            print(planets.count)
-            print(planets.next)
+            print(planets.count ?? 0)
+            print(planets.next ?? 0)
         }
     }
 

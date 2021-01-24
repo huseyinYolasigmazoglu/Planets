@@ -13,10 +13,13 @@ class PlanetWebService {
         
         Webservice().load(resource()) { (planets) in
             
-            print(planets?.count ?? 0)
-            print(planets?.next ?? 0)
+            guard let allPlanets = planets else {
+                return
+            }
+            DispatchQueue.main.async {
+                completion(allPlanets)
+            }
         }
-        
     }
     
     func resource() -> Resource<Planets> {
