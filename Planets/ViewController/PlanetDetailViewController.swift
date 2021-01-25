@@ -9,6 +9,15 @@ import UIKit
 
 class PlanetDetailViewController: UIViewController {
 
+    var planet : Planet? {
+        didSet{
+            if let planet = planet {
+                print(planet.name ?? "")
+            }
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

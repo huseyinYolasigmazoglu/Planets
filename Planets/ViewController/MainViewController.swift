@@ -33,6 +33,27 @@ class MainViewController: UIViewController {
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let identifier = segue.identifier {
+            
+            if identifier == Constants.goToPlanetDetailViewSegue {
+                
+                if let destinationViewController = segue.destination as? PlanetDetailViewController {
+                    
+                    if let index = sender as? IndexPath {
+                        
+                        destinationViewController.planet = planetListViewModel?.planetAtIndex(index.row)
+                    }
+                }
+                
+            }
+            
+        }
+    }
+    
+    
 }
 
 //MARK: - UICollectionView extensions - DataSource
@@ -64,6 +85,11 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: collectionViewCellWidth, height: collectionViewCellWidth)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: Constants.goToPlanetDetailViewSegue, sender: indexPath)
     }
     
 }
