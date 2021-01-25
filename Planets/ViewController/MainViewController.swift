@@ -17,22 +17,28 @@ class MainViewController: UIViewController {
     private var collectionViewCellWidth : CGFloat = 180
     private var planet = PlanetWebService()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         collectionViewCellWidth = (self.view.frame.width) / 2 - 15
         
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        planet.getAllPlanets { [weak self] (allPlanets) in
-                        
-            self?.planetListViewModel = PlanetListViewModel(planets: allPlanets)
-            
-            self?.collectionView.reloadData()
-        }
+        getPlanets()
     }
     
+    func getPlanets()  {
+        
+        planet.getAllPlanets { [weak self] (allPlanets) in
+            
+            DispatchQueue.main.async {
+                self?.planetListViewModel = PlanetListViewModel(planets: allPlanets, delegate: self)
+            }
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -47,13 +53,17 @@ class MainViewController: UIViewController {
                         destinationViewController.planet = planetListViewModel?.planetAtIndex(index.row)
                     }
                 }
-                
             }
-            
         }
     }
+}
+
+extension MainViewController : PlanetListViewModelDelegate {
     
-    
+    func refresh() {
+        
+        self.collectionView.reloadData()
+    }
 }
 
 //MARK: - UICollectionView extensions - DataSource
@@ -67,16 +77,15 @@ extension MainViewController :UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetCell", for: indexPath) as? PlanetCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.PlanetCell, for: indexPath) as? PlanetCollectionViewCell
+        else {
             fatalError("PlanetCollectionViewCell not found")
         }
         
         cell.configure(self.planetListViewModel?.planetAtIndex(indexPath.row))
         
         return cell
-        
     }
-    
 }
 
 //MARK: - UICollectionView extensions - Layout

@@ -12,7 +12,12 @@ class PlanetCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var planetName: UILabel!
     
     
-    func configure(_ planet:PlanetViewModel?)  {
+    override func prepareForReuse() {
+        
+        planetName.text = nil
+    }
+    
+    func configure(_ planet:PlanetEntity?)  {
         
         if let planet = planet {
             planetName.text = planet.name

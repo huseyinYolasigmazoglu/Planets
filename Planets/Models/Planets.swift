@@ -15,12 +15,3 @@ struct Planets: Codable {
     let results : [Planet?]
 }
 
-struct Planet : Codable {
-    
-    let name : String?
-    let population : String?
-    let climate : String?
-    let terrain : String?
-    let gravity : String?
-    let diameter: String?
-}

@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 class Constants {
     
     static let goToPlanetDetailViewSegue : String = "goToPlanetDetailViewSegue"
 
+    static let testUrl : String = "https://swapi.dev/api/planets/"
+
+    static let PlanetCell : String = "PlanetCell"
 }

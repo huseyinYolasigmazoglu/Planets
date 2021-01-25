@@ -1,22 +1,19 @@
 //
-//  PlanetViewModel.swift
+//  PlanetEntity.swift
 //  Planets
 //
 //  Created by Huseyin Yolasigmazoglu on 25/01/2021.
 //
 
 import Foundation
+import CoreData
 
-struct PlanetViewModel  {
+
+public class PlanetEntity: NSManagedObject {
     
-    let name : String 
-    let population : String
-    let climate : String
-    let terrain : String
-    let gravity : String
-    let diameter: String
-    
-    init(planet: Planet?){
+    convenience init(planet: Planet?,context moc: NSManagedObjectContext)  {
+        
+        self.init(context: moc)
         
         if let planet = planet {
             name = planet.name ?? ""
@@ -32,7 +29,7 @@ struct PlanetViewModel  {
             climate = ""
             terrain =  ""
             gravity =  ""
-            diameter = "" 
+            diameter = ""
         }
     }
 }
