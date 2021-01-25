@@ -38,7 +38,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlanetName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo7-0g-Up2">
                                                     <rect key="frame" x="29.5" y="94" width="126.5" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -47,7 +47,7 @@
                                                 <constraint firstItem="vo7-0g-Up2" firstAttribute="centerX" secondItem="Q4H-EX-3VZ" secondAttribute="centerX" id="nWs-9X-blv"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="185" height="217"/>
                                         <connections>
                                             <outlet property="planetName" destination="vo7-0g-Up2" id="BmC-D8-nYh"/>

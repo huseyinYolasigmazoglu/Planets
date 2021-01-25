@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     private var planetListViewModel : PlanetListViewModel?
     
     private var collectionViewCellWidth : CGFloat = 180
+    private var planet = PlanetWebService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,8 @@ class MainViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        let p = PlanetWebService()
-        p.getAllPlanets { (allPlanets) in
-            
-            print("hey")
-            print(allPlanets.count)
-            
+        planet.getAllPlanets { (allPlanets) in
+                        
             self.planetListViewModel = PlanetListViewModel(planets: allPlanets)
             
             self.collectionView.reloadData()
@@ -49,7 +46,11 @@ extension MainViewController :UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlanetCell", for: indexPath) as? PlanetCollectionViewCell else {
+            fatalError("PlanetCollectionViewCell not found")
+        }
+        
+        cell.configure(planetListViewModel?.planetAtIndex(indexPath.row))
         
         return cell
         
@@ -71,7 +72,6 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
         let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PlanetHeaderCollectionReusableView.identifier, for: indexPath) as! PlanetHeaderCollectionReusableView
         
 
-        
         return cell
     }
 }

@@ -9,8 +9,14 @@ import UIKit
 
 class PlanetCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var planetName: UILabel!
+    @IBOutlet private weak var planetName: UILabel!
     
     
+    func configure(_ planet:Planet?)  {
+        
+        if let planet = planet {
+            planetName.text = planet.name
+        }
+    }
     
 }
