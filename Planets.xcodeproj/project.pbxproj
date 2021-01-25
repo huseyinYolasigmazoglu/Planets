@@ -23,6 +23,7 @@
 		524DA27725BDBDB200794ACF /* PlanetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DA27625BDBDB200794ACF /* PlanetCollectionViewCell.swift */; };
 		524DA28425BEB13000794ACF /* PlanetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DA28325BEB13000794ACF /* PlanetDetailViewController.swift */; };
 		524DA28E25BEB9EC00794ACF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DA28D25BEB9EC00794ACF /* Constants.swift */; };
+		524DA29325BED8DB00794ACF /* PlanetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DA29225BED8DB00794ACF /* PlanetViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		524DA27625BDBDB200794ACF /* PlanetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetCollectionViewCell.swift; sourceTree = "<group>"; };
 		524DA28325BEB13000794ACF /* PlanetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailViewController.swift; sourceTree = "<group>"; };
 		524DA28D25BEB9EC00794ACF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		524DA29225BED8DB00794ACF /* PlanetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				524DA26E25BDB14400794ACF /* PlanetListViewModel.swift */,
+				524DA29225BED8DB00794ACF /* PlanetViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				524DA28E25BEB9EC00794ACF /* Constants.swift in Sources */,
 				524A1C3525BD4E4300D3D7FA /* MainViewController.swift in Sources */,
 				524A1C8A25BD632000D3D7FA /* Planets.swift in Sources */,
+				524DA29325BED8DB00794ACF /* PlanetViewModel.swift in Sources */,
 				524A1C3125BD4E4300D3D7FA /* AppDelegate.swift in Sources */,
 				524DA28425BEB13000794ACF /* PlanetDetailViewController.swift in Sources */,
 				524A1C3325BD4E4300D3D7FA /* SceneDelegate.swift in Sources */,

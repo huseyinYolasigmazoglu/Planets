@@ -25,11 +25,11 @@ class MainViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        planet.getAllPlanets { (allPlanets) in
+        planet.getAllPlanets { [weak self] (allPlanets) in
                         
-            self.planetListViewModel = PlanetListViewModel(planets: allPlanets)
+            self?.planetListViewModel = PlanetListViewModel(planets: allPlanets)
             
-            self.collectionView.reloadData()
+            self?.collectionView.reloadData()
         }
     }
     
@@ -71,7 +71,7 @@ extension MainViewController :UICollectionViewDataSource {
             fatalError("PlanetCollectionViewCell not found")
         }
         
-        cell.configure(planetListViewModel?.planetAtIndex(indexPath.row))
+        cell.configure(self.planetListViewModel?.planetAtIndex(indexPath.row))
         
         return cell
         

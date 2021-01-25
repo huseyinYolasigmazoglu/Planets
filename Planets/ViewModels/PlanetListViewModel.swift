@@ -11,14 +11,13 @@ struct PlanetListViewModel {
     
     private(set) var planets: [Planet?]
     
-    func planetAtIndex(_ index: Int) -> Planet? {
+    func planetAtIndex(_ index: Int) -> PlanetViewModel? {
         
         if index >= 0 && index < planets.count {
-            return planets[index]
+            return PlanetViewModel(planet: planets[index])
         }
-        else
-        {
-            return nil 
+        else{
+            return nil
         }
     }
     

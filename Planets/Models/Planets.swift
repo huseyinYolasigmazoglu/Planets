@@ -21,5 +21,6 @@ struct Planet : Codable {
     let population : String?
     let climate : String?
     let terrain : String?
-    let gravity : String?   
+    let gravity : String?
+    let diameter: String?
 }

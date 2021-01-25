@@ -12,7 +12,7 @@ class PlanetCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var planetName: UILabel!
     
     
-    func configure(_ planet:Planet?)  {
+    func configure(_ planet:PlanetViewModel?)  {
         
         if let planet = planet {
             planetName.text = planet.name
