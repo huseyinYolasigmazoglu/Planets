@@ -66,13 +66,5 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
         return CGSize(width: collectionViewCellWidth, height: collectionViewCellWidth)
     }
     
-    //for header
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PlanetHeaderCollectionReusableView.identifier, for: indexPath) as! PlanetHeaderCollectionReusableView
-        
-
-        return cell
-    }
 }
 
