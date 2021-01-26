@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     private var collectionViewCellWidth : CGFloat = 180
     private var planet = PlanetWebService()
     
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +40,7 @@ class MainViewController: UIViewController {
         
         planet.getAllPlanets { [weak self] (allPlanets) in
             
-            DispatchQueue.main.async {
-                self?.planetListViewModel = PlanetListViewModel(planets: allPlanets, delegate: self)
-            }
+            self?.planetListViewModel = PlanetListViewModel(planets: allPlanets, delegate: self,context: self!.context)
         }
     }
     
@@ -61,6 +60,15 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    private func showInfoAlert(message:String){
+        
+        let alertController = UIAlertController(title: "Info", message:
+                                                    message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension MainViewController : PlanetListViewModelDelegate {
@@ -71,6 +79,9 @@ extension MainViewController : PlanetListViewModelDelegate {
             self.activityIndicator.stopAnimating()
             self.collectionView.reloadData()
             
+            if self.planetListViewModel?.numberOfPlanets ?? 0 == 0{
+                self.showInfoAlert(message: "No Planet Found!")
+            }
         }
     }
 }
@@ -80,7 +91,7 @@ extension MainViewController :UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.planetListViewModel?.numberOfSections ?? 0
+        return self.planetListViewModel?.numberOfPlanets ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -25,11 +25,12 @@ class PlanetListViewModel {
     
     private var planetEntities: [PlanetEntity?] = [PlanetEntity?]()
     
-    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context : NSManagedObjectContext
     
-    init(planets:[Planet?]? , delegate : PlanetListViewModelDelegate? ) {
+    init(planets:[Planet?]? , delegate : PlanetListViewModelDelegate? , context : NSManagedObjectContext ) {
         
         self.delegate = delegate
+        self.context = context
         
         if let planets = planets {
             
@@ -66,7 +67,7 @@ class PlanetListViewModel {
         }
     }
     
-    var numberOfSections: Int {
+    var numberOfPlanets: Int {
         return self.planetEntities.count
     }
 }
