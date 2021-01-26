@@ -2,7 +2,7 @@
 
 My Enviroment:
 
-xCode Version 12.3 (12C33)
+xCode Version 12.3 (12C33) 
 My swift version : Swift 5
 Minimum iOS version should be 13.0
 Not used any third-party libraries
@@ -28,7 +28,9 @@ This class also has a protocol to be able to refresh data  of  MainViewControlle
 
 Webservice : A Generic  web service class.
 
-PlanetWebService : get All Planets from https://swapi.dev/api/planets  and return with closure.
+PlanetWebService : get All Planets from https://swapi.dev/api/planets  and return data with closure.
 
 PlanetDetailViewController : in MainViewController , when a planet cell , this is segued.
+
+PlanetsTests : For Unit tests.
 
