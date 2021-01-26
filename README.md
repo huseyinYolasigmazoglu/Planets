@@ -10,20 +10,20 @@ Unit test written in PlanetsTests.
 
 General Usage:
 
-There is UICollectionView at start screen. It presents name of planet. If you click one planet you will go to detail page.
-When application start it try to load planets from https://swapi.dev/api/planets/, if there is a problem it tries to load from Core Data , from previous run.
+There is UICollectionView at start screen. It presents name of planets. If you click one planet you will go to detail page.
+When application start it try to load planets from https://swapi.dev/api/planets/, if there is a problem then it tries to load from Core Data , from previous run.
 
 
 Important classes:
 
 Planet : Codable model for https://swapi.dev/api/planets web service.
 
-MainViewController :  it has a uicollectionview , this class call PlanetWebService to get planets. This class also segue to DetailView .
+MainViewController :  it has a uicollectionview , this class call PlanetWebService to get planets. This class also segue to DetailView.
 This class hold an PlanetListViewModel instance.
 
-PlanetListViewModel: This class manages most of the bussiness logic . Holds an [Planet?] array and convert it to [PlanetEntity?] ,  
+PlanetListViewModel: This class manages most of the bussiness logic . Holds an [Planet?] array and converts it to [PlanetEntity?] ,  
 PlanetEntity behave like an ModelView and can also save coreData for data persistance. PlanetListViewModel in init , 
-if no data came from web service it will load data from cora data.if data is received from web service , this will be saved . 
+if no data came from web service it will load data from cora data.if data is received from web service , this will be saved. 
 This class also has a protocol to be able to refresh data  of  MainViewController.
 
 Webservice : A Generic  web service class.
