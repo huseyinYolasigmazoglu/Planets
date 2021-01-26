@@ -35,7 +35,6 @@ class MainViewController: UIViewController {
         
         getPlanets()
     }
-    
     func getPlanets()  {
         
         planet.getAllPlanets { [weak self] (allPlanets) in
