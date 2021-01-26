@@ -51,7 +51,9 @@ class PlanetListViewModel {
             planetEntities.append(PlanetEntity(planet: item, context: context))
             
         }
-        delegate?.refresh()
+        
+        self.delegate?.refresh()
+        
     }
     
     func planetAtIndex(_ index: Int) -> PlanetEntity? {
@@ -85,12 +87,13 @@ extension PlanetListViewModel {
         
         let request : NSFetchRequest<PlanetEntity> = PlanetEntity.fetchRequest()
         do {
-            planetEntities =  try context.fetch(request)
+            self.planetEntities =  try self.context.fetch(request)
         } catch  {
             print("Error context.fetch(request)")
         }
         
-        delegate?.refresh()
+        self.delegate?.refresh()
+        
     }
     
     func deleteAllCoreData()  {

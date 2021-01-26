@@ -10,6 +10,8 @@ import UIKit
 class MainViewController: UIViewController {
     
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     
     private var planetListViewModel : PlanetListViewModel?
@@ -20,6 +22,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
         
         
         collectionViewCellWidth = (self.view.frame.width) / 2 - 15
@@ -61,8 +66,12 @@ class MainViewController: UIViewController {
 extension MainViewController : PlanetListViewModelDelegate {
     
     func refresh() {
-        
-        self.collectionView.reloadData()
+        DispatchQueue.main.async {
+            
+            self.activityIndicator.stopAnimating()
+            self.collectionView.reloadData()
+            
+        }
     }
 }
 
