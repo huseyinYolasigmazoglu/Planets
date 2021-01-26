@@ -28,3 +28,7 @@ This class also has a protocol to be able to refresh data  of  MainViewControlle
 
 Webservice : A Generic  web service class.
 
+PlanetWebService : get All Planets from https://swapi.dev/api/planets  and return with closure.
+
+PlanetDetailViewController : in MainViewController , when a planet cell , this is segued.
+
