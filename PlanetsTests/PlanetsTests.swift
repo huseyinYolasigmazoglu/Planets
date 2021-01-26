@@ -18,10 +18,41 @@ class PlanetsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testPlanetWebService_WhenPlanetWebServiceCalled_ShouldNotReturnNil()  {
+        
+        let expectation = self.expectation(description: "WaitForWebService")
+        
+        let test = PlanetWebService()
+        var result : [Planet?]?
+        
+        test.getAllPlanets { (planets) in
+            
+            result = planets
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 2, handler: nil)
+        XCTAssertNotNil(result)
     }
+    
+    func testPlanetWebService_WhenPlanetWebServiceCalled_ShouldReturnMoreThenZero()  {
+        
+        let expectation = self.expectation(description: "WaitForWebService")
+        
+        let test = PlanetWebService()
+        var result : [Planet?]?
+        
+        test.getAllPlanets { (planets) in
+            
+            result = planets
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 2, handler: nil)
+        XCTAssertTrue(result?.count ?? 0 > 0)
+    }
+    
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

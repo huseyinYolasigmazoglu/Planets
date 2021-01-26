@@ -34,7 +34,7 @@ class PlanetListViewModel {
         if let planets = planets {
             
             self.planets = planets
-            deleteCoreData()
+            deleteAllCoreData()
             transform()
             save()
         }
@@ -93,7 +93,7 @@ extension PlanetListViewModel {
         delegate?.refresh()
     }
     
-    func deleteCoreData()  {
+    func deleteAllCoreData()  {
         
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "PlanetEntity")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)

@@ -11,9 +11,9 @@ import CoreData
 
 public class PlanetEntity: NSManagedObject {
     
-    convenience init(planet: Planet?,context moc: NSManagedObjectContext)  {
+    convenience init(planet: Planet?,context con: NSManagedObjectContext)  {
         
-        self.init(context: moc)
+        self.init(context: con)
         
         if let planet = planet {
             name = planet.name ?? ""
